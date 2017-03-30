@@ -107,4 +107,4 @@ Now we'll start morphing our form into a full Rails form using the `#form_tag` a
 
 Extra Credit
 
-1. Modify your form view to display a list of the error messages that are attached to your failed model object if you fail validations. Recall the `#errors` and `#full_messages` methods. Start by displaying them at the top and then modify
+1. Modify your form view to display a list of the error messages that are attached to your failed model object if you fail validations. Recall the `#errors` and `#full_messages` methods. Start by displaying them at the top and then modify 
