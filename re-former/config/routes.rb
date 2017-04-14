@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-	resources :users
-	# get '/help', to 'users#index'
+	resources :users, :only => [:new,:create]
+	# get '/users', to: 'users#index'
 end
