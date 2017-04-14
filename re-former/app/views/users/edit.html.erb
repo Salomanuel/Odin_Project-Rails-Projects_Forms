@@ -1,0 +1,17 @@
+<head><style>	input { display:block; }</style></head>
+
+<h1>edit view for <%= @user.username %> </h1>
+
+
+<%= form_tag("/users/params[:id]/edit", method: "get") do %>
+	<%= label_tag(:username, 	"username:") %>
+	<%= text_field_tag(:username) %>
+
+	<%= label_tag(:email,			"email:") %>
+	<%= text_field_tag(:email) %>
+
+	<%= label_tag(:password, 	"password:") %>
+	<%= password_field_tag(:password) %>
+
+	<%= submit_tag("submit") %>
+<% end %>
