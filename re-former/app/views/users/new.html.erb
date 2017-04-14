@@ -4,6 +4,20 @@
 </style>
 </head>
 
+<h2>railsy-er form with form_for</h2>
+<%= form_for @user do |f| %>
+	<%= f.label 			:username %>
+	<%= f.text_field 	:username %>
+
+	<%= f.label 			:email %>
+	<%= f.text_field 	:email %>
+
+	<%= f.label 			:password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "submit" %>
+<% end %>
+
 <h2>railsy form with form_tag</h2>
 
 <%= form_tag("/users", method: "post") do %>
