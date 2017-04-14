@@ -8,4 +8,9 @@ class UserTest < ActiveSupport::TestCase
   test "it should just work" do
   	assert @user.valid?
   end
+
+  test "username shouldn't be empty" do
+  	@user.name = "   "
+  	assert_not @user.valid?
+  end
 end
