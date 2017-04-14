@@ -2,7 +2,21 @@
 
 <h1>edit view for <%= @user.username %> </h1>
 
+<h2>form_for form</h2>
+<%= form_for @user do |f| %>
+	<%= f.label 			:username %>
+	<%= f.text_field 	:username %>
 
+	<%= f.label 			:email %>
+	<%= f.text_field 	:email %>
+
+	<%= f.label 			:password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "submit" %>
+<% end %>
+
+<h2>form_tag form</h2>
 <%= form_tag("/users/params[:id]/edit", method: "get") do %>
 	<%= label_tag(:username, 	"username:") %>
 	<%= text_field_tag(:username) %>
