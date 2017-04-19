@@ -1,9 +1,9 @@
 <head><style>
 	input { display: block; }
 </style></head>
-<h1>edit view here</h1>
+<h1>editing <%= @user.username %></h1>
 
-<%= "username is #{@user.username}" %>
+<%= render partial: 'errors' %>
 
 <%= form_for(@user) do |f| %>
 	<%= f.label :username %>
