@@ -1,0 +1,19 @@
+<head><style>
+	input { display: block; }
+</style></head>
+<h1>edit view here</h1>
+
+<%= "username is #{@user.username}" %>
+
+<%= form_for(@user) do |f| %>
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit "Submit" %>
+<% end %>
