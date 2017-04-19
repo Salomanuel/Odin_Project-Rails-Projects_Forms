@@ -3,6 +3,20 @@
 </style></head>
 <h1>New here</h1>
 
+<h2>Railsy form with FORM_TAG</h2>
+<%= form_tag("/users", method:"post") do %>
+	<%= label_tag(:username, "Username") %>
+	<%= text_field_tag(:username) %>
+
+	<%= label_tag(:email, "Email") %>
+	<%= email_field_tag(:email) %>
+
+	<%= label_tag(:password, "Password") %>
+	<%= password_field_tag(:password) %>
+
+	<%= submit_tag("Submit") %>
+<% end %>
+
 <h2>HTML form</h2>
 <form action="/users" method="post" accept-charset="UTF-8">
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
