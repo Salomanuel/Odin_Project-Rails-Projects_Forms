@@ -1,1 +1,40 @@
+<head>
+<style>
+	input { 
+		display: block;	
+		margin-bottom: 20px;
+	}
+</style>
+</head>
+
 <h1>NEW view</h1>
+<form action="/users" method="post" accept-charset="UTF-8">
+
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+	<label for="username">Username:</label> 							
+	<input 	type=	"text" 			
+					name=	"username"		
+					id=		"username"
+					value="user1">
+
+	<label for="email">Email:</label>									
+	<input 	type=	"email" 		
+					name=	"email"			
+					id=		"email"
+					value="user1@user.us">
+
+	<label for="password">Password:</label>
+	<input 	type=	"password"	
+					name=	"password"		
+					id=		"password"
+					value="foobar">
+
+	<label for="password_confirmation">Password confirmation:</label>
+	<input 	type=	"password"	
+					name=	"password_confirmation" 
+					id=		"password_confirmation"
+					value="foobar">	
+
+	<input type="submit" value="submit">
+</form>
