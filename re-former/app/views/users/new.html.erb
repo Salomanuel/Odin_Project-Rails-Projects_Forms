@@ -8,6 +8,20 @@
 </head>
 
 <h1>NEW view</h1>
+
+<h3>Railsy-er forms with form_for</h3>
+<%= form_for @user do |f| %>
+	<%= f.label 			:username, 	"Username:" %>
+	<%= f.text_field 	:username, 	:value => "user5" %>
+
+	<%= f.label				:email, 		"Email:" 		%>
+	<%= f.email_field :email, 		:value	=> "user5@user.us" %>
+
+	<%= f.submit 									"Submit" 		%>
+
+<% end %>
+
+<br><br>
 <h3>railsy form with form_tag</h3>
 
 <%= form_tag("/users", method: "post") do %>
