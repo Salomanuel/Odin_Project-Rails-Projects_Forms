@@ -8,6 +8,23 @@
 </head>
 
 <h1>NEW view</h1>
+<h3>railsy form with form_tag</h3>
+
+<%= form_tag("/users", method: "post") do %>
+
+	<%= label_tag(:username, "Username:") %>
+	<%= text_field_tag(:username, "user4") %>
+
+	<%= label_tag(:email, "Email:") %>
+	<%= email_field_tag(:email, "email4@user.us") %>
+
+	<%= submit_tag("submit") %>
+
+<% end %>
+
+<br><br>
+
+<h3>html forms</h3>
 <form action="/users" method="post" accept-charset="UTF-8">
 
 	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
@@ -24,7 +41,7 @@
 					id=		"email"
 					value="user4@user.us">
 
-<!-- <div>	
+	<!-- <div>	
 	<label for="password">Password:</label>
 	<input 	type=	"password"	
 					name=	"password"		
@@ -35,8 +52,8 @@
 	<input 	type=	"password"	
 					name=	"password_confirmation" 
 					id=		"password_confirmation"
-					value="foobar">
-</div> -->
+						value="foobar">
+	</div> -->
 
 	<input type="submit" value="submit">
 </form>
