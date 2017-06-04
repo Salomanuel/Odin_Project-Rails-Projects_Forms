@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+	def show
+		@user = User.find(params[:id])
+	end
+
 	def new
 		@user = User.new
 	end
@@ -17,8 +22,17 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
+	def edit
 		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		if @user.update(user_params)
+			render html: "SAVED"
+		else
+			render html: @user.errors.messages
+		end
 	end
 
 	private
