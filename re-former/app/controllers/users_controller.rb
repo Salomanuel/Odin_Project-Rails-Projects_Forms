@@ -16,14 +16,18 @@ class UsersController < ApplicationController
 			# render :new
 		end
 	end
-end
 
-
-private
-	def user_params
-		params.require(:user).permit(:username, :email)
+	def show
+		@user = User.find(params[:id])
 	end
+
+	private
+		def user_params
+			params.require(:user).permit(:username, :email)
+		end
 
 =begin
 ":username"=>"user1", ":email"=>"user1@user.us"
 =end
+
+end

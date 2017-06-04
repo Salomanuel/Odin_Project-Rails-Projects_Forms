@@ -1,0 +1,30 @@
+<head>
+<style>
+th, td { border: 1px black solid; }
+</style>
+</head>
+<h1>show here</h1>
+
+<h2>introducing <%=@user.username%> </h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Created at</th>
+			<th>Updated at</th>                                      
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%=@user.username%></td>
+			<td><%=@user.email%></td>
+			<td><%=@user.created_at%></td>
+			<td><%=@user.updated_at%></td>
+		</tr>
+	</tbody>
+</table>
+<br><br>
+<%= link_to "new user", new_user_path %>
+<%#= link_to "edit", edit_path %>
