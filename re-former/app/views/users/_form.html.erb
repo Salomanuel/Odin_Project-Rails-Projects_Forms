@@ -1,0 +1,19 @@
+<head>
+<style>
+	input { 
+		display: block;	
+		margin-bottom: 20px;
+	}
+</style>
+</head>
+
+<%= form_for @user do |f| %>
+	<%= f.label 			:username, 	"Username:" %>
+	<%= f.text_field 	:username, 	:value => "user5" %>
+
+	<%= f.label				:email, 		"Email:" 		%>
+	<%= f.email_field :email, 		:value	=> "user5@user.us" %>
+
+	<%= f.submit 									"Submit" 		%>
+
+<% end %>
