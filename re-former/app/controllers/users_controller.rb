@@ -14,11 +14,11 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.valid?
 			@user.save
-			render html: "SAVED"
-			# redirect_to new_user_path
+			redirect_to new_user_path
+			# render html: "SAVED"
 		else
-			render html: @user.errors.messages
-			# render :new
+			# render html: @user.errors.messages
+			render :new
 		end
 	end
 
