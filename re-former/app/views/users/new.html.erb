@@ -1,19 +1,5 @@
 <head>
-	<style>
-		input { display: block; }
-		section {
-			display: inline-block;
-			width: 45%;
-			margin: 10px;
-		}
-		.html-form {
-			float: left;
-		}
 
-		.rails-form {
-			float: right;
-		}
-	</style>
 </head>
 
 <h1>Many forms</h1>
@@ -67,18 +53,6 @@
 
 		<%= submit_tag("Submit") %>
 	<% end %>
-
-	<h2>Railsy-er form with #form_for</h2>
-	<%= form_for(@user) do |f| %>
-		<%= f.label :username %>
-		<%= f.text_field :username %>
-
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-
-		<%= f.submit %>
-	<% end %>
+<h2>Railsy-er form with #form_for</h2>
+	<%= render partial: 'form_for' %>
 </section>
