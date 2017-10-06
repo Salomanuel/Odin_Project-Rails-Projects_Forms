@@ -1,40 +1,68 @@
 <head>
 	<style>
 		input { display: block; }
+		section {
+			display: inline-block;
+			width: 45%;
+			margin: 10px;
+		}
+		.html-form {
+			float: left;
+		}
+
+		.rails-form {
+			float: right;
+		}
 	</style>
 </head>
 
 <h1>Many forms</h1>
 
-<p>starting from the</p>
-<h2>HTML form</h2>
-<form action="/users" method="post">
-	<input type="hidden" 		name="authenticity_token" value="<%= form_authenticity_token %>">
-	
-	<label  for="username">Username</label>
-	<input type="text" 			name="username",	id="username">
+<section class="html-form">
+	<p>starting from the</p>
+	<h2>HTML form</h2>
+	<form action="/users" method="post">
+		<input type="hidden" 		name="authenticity_token" value="<%= form_authenticity_token %>">
+		
+		<label  for="username">Username</label>
+		<input type="text" 			name="username",	id="username">
 
-	<label  for="email"		>Email</label>
-	<input type="email" 		name="email",			id="email">
+		<label  for="email"		>Email</label>
+		<input type="email" 		name="email",			id="email">
 
-	<label  for="password">Password</label>
-	<input type="password" 	name="password", 	id="password">
-	
-	<input type="submit" 		value="Submit">
-</form>
+		<label  for="password">Password</label>
+		<input type="password" 	name="password", 	id="password">
+		
+		<input type="submit" 		value="Submit">
+	</form>
 
-<h2>HTML form with nested attributes</h2>
-<form action="/users" method="post">
-	<input type="hidden" 		name="authenticity_token" value="<%= form_authenticity_token %>">
-	
-	<label  for="username">Username</label>
-	<input type="text" 			name="user[username]",	id="username">
+	<h2>HTML form with nested attributes</h2>
+	<form action="/users" method="post">
+		<input type="hidden" 		name="authenticity_token" value="<%= form_authenticity_token %>">
+		
+		<label  for="username">Username</label>
+		<input type="text" 			name="user[username]",	id="username">
 
-	<label  for="email"		>Email</label>
-	<input type="email" 		name="user[email]",			id="email">
+		<label  for="email"		>Email</label>
+		<input type="email" 		name="user[email]",			id="email">
 
-	<label  for="password">Password</label>
-	<input type="password" 	name="user[password]", 	id="password">
-	
-	<input type="submit" 		value="Submit">
-</form>
+		<label  for="password">Password</label>
+		<input type="password" 	name="user[password]", 	id="password">
+		
+		<input type="submit" 		value="Submit">
+	</form>
+</section>
+
+<section class="rails-form">
+	<h2>Railsy forms with #form_tag</h2>
+	<%= form_tag("/users", method: :post) do %>
+		<%= label_tag :username %>
+		<%= text_field_tag 'username' %>
+
+		<%= label_tag :email %>
+		<%= email_field_tag 'email' %>
+
+		<%= label_tag :password %>
+		<%= password_field_tag 'password' %>
+	<% end %>
+</section>
