@@ -3,7 +3,10 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
+		# @user = User.new(user_params)
+		@user = User.new(username: params[:username], 
+												email: params[:email],
+										 password: params[:password])
 		if @user.valid?
 			@user.save
 			render inline:"<h1>ok</h1>"
@@ -12,8 +15,8 @@ class UsersController < ApplicationController
 		end
 	end
 	private
-		def user_params
-			params.require(:user).permit(:username, :password, :email)
-		end
+		# def user_params
+		# 	params.require(:user).permit(:username, :password, :email)
+		# end
 
 end
