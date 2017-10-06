@@ -6,9 +6,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	<style>
+			input { display: block; }
+			li { display: inline; }
+			section {
+				display: inline-block;
+				width: 45%;
+				margin: 10px;
+			}
+			.html-form {
+				float: left;
+			}
+
+			.rails-form {
+				float: right;
+			}
+		</style>
   </head>
 
   <body>
+  	<nav>
+  		<li><%= link_to "all users", users_path %></li>
+  		<li><%= link_to "all forms", new_user_path %></li>
+  	</nav>
     <%= yield %>
   </body>
 </html>
